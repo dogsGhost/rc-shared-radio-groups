@@ -9,16 +9,16 @@ class UniqueMultiSelect extends Component {
   }
 
   _handleClick(e) {
-      const val = e.target.innerHTML
-      const name = e.target.dataset.name
-      // user selects the value they prev selected, effectively 'unselecting' it
-      // or user selects a value for first time
-      const newVal = val === this.state[name] ? '' : val
+    const val = e.target.innerHTML
+    const name = e.target.dataset.name
+    // user selects the value they prev selected, effectively 'unselecting' it
+    // or user selects a value for first time
+    const newVal = val === this.state[name] ? '' : val
 
-      // call whatever custom handler was passed in
-      this.props.onSelect(name, val)
-      // update local state
-      this.setState({ [name]: newVal })
+    // call whatever custom handler was passed in
+    this.props.onSelect(name, val)
+    // update local state
+    this.setState({ [name]: newVal })
   }
 
   render() {
@@ -39,7 +39,7 @@ class UniqueMultiSelect extends Component {
 
         if ((curVal !== val && hasVal) || (curVal && curVal !== val)) {
           cName += ' is-disabled'
-          handler = () => {}
+          handler = () => { }
         }
 
         return (
@@ -48,7 +48,7 @@ class UniqueMultiSelect extends Component {
             className={cName}
             data-name={name}
             onClick={handler}>
-              {val}
+            {val}
           </li>
         )
       })
@@ -78,7 +78,7 @@ UniqueMultiSelect.propTypes = {
 }
 
 UniqueMultiSelect.defaultProps = {
-  onSelect: () => {}
+  onSelect: () => { }
 }
 
 export default UniqueMultiSelect
