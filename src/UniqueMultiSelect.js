@@ -44,30 +44,30 @@ class UniqueMultiSelect extends Component {
         }
 
         return (
-          <li
-            key={i}
+          <div
             className={cName}
             data-name={name}
+            key={i}
             onClick={handler}>
             {val}
-          </li>
+          </div>
         )
       })
     }
 
     return (
-      <ul className="UniqueMultiSelect">
+      <div className="UniqueMultiSelect">
         {this.props.names.map((name, index) => {
           return (
-            <li key={index} className="UniqueMultiSelect-item">
-              <strong className="UniqueMultiSelect-name">{name}:</strong>
-              <ul className="UniqueMultiSelect-valueList">
+            <div key={index} className="UniqueMultiSelect-item">
+              <div className="UniqueMultiSelect-name">{name}:</div>
+              <div className="UniqueMultiSelect-valueList">
                 {generateValue(name)}
-              </ul>
-            </li>
+              </div>
+            </div>
           )
         })}
-      </ul>
+      </div>
     )
   }
 }
