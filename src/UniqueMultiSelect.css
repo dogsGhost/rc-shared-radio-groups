@@ -1,15 +1,7 @@
 .UniqueMultiSelect,
 .UniqueMultiSelect-valueList {
   margin: 0 0 1em;
-  padding: 0;
-  list-style: none;
   font-family: sans-serif;
-}
-
-.UniqueMultiSelect-item,
-.UniqueMultiSelect-value {
-  margin: 0;
-  padding: 0;
 }
 
 .UniqueMultiSelect-name {
@@ -26,19 +18,36 @@
 
 .UniqueMultiSelect-value {
   display: inline-block;
-  cursor: pointer;
-  padding: 0.5em;
   margin-right: 1em;
   border: 1px solid #000;
 }
 
-.UniqueMultiSelect-value.is-selected {
+/* checkbox label */
+.UniqueMultiSelect-label {
+  display: block;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+/* label of selected checkbox */
+.UniqueMultiSelect-value.is-selected .UniqueMultiSelect-label {
   background: #333;
   color: #fff;
 }
 
-.UniqueMultiSelect-value.is-disabled {
-  cursor: default;
+/* label of disabled checkbox */
+.UniqueMultiSelect-value.is-disabled .UniqueMultiSelect-label {
   font-style: italic;
   color: #ccc;
+  cursor: not-allowed;
+}
+
+/* checkbox */
+.UniqueMultiSelect-input {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
