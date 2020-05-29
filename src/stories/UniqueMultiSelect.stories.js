@@ -37,6 +37,14 @@ export const noValuesPassed = () => {
   />
 };
 
+export const incorrectNumberOfValuesPassed = () => {
+  return <UniqueMultiselect
+    names={animals}
+    onSelect={action('selected')}
+    values={[1]}
+  />
+};
+
 export const noSelectHandlerPassed = () => {
   return <UniqueMultiselect
     names={tasks}

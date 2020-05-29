@@ -9,6 +9,12 @@ class UniqueMultiselect extends Component {
     this.values = this.props.values || Array.from({ length: props.names.length }, (v, k) => k + 1)
     this.state = {}
     this._handleChange = this._handleChange.bind(this)
+
+    if (props.values && (props.names.length !== props.values.length)) {
+      console.error(
+        `UniqueMultiselect Error: The arrays PROPS.NAMES and PROPS.VALUES are not the same length (${props.names.length} vs ${props.values.length})`
+      )
+    }
   }
 
   _handleChange({ target }) {
@@ -85,16 +91,21 @@ class UniqueMultiselect extends Component {
 
 // accepts three props
 UniqueMultiselect.propTypes = {
-  names: PropTypes.array.isRequired,
+  names: PropTypes.arrayOf(PropTypes.string).isRequired,
   // values & names must be the same length
-  values: PropTypes.array,
+  values: PropTypes.arrayOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ])),
   // handler for when a value is set
   onSelect: PropTypes.func,
 }
 
 UniqueMultiselect.defaultProps = {
   // default to empty function
-  onSelect: () => { }
+  onSelect: () => {
+    console.log('UniqueMultiselect: No PROPS.ONSELECT value passed')
+  }
 }
 
 export default UniqueMultiselect
