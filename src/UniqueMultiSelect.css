@@ -16,6 +16,7 @@
   padding: 0.5em;
   text-align: right;
   min-width: 4em;
+  font-weight: 600;
 }
 
 .UniqueMultiSelect-valueList {

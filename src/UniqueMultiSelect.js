@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './UniqueMultiSelect.css'
 
 class UniqueMultiSelect extends Component {
@@ -9,16 +10,16 @@ class UniqueMultiSelect extends Component {
   }
 
   _handleClick(e) {
-      const val = e.target.innerHTML
-      const name = e.target.dataset.name
-      // user selects the value they prev selected, effectively 'unselecting' it
-      // or user selects a value for first time
-      const newVal = val === this.state[name] ? '' : val
+    const val = e.target.innerHTML
+    const name = e.target.dataset.name
+    // user selects the value they prev selected, effectively 'unselecting' it
+    // or user selects a value for first time
+    const newVal = val === this.state[name] ? '' : val
 
-      // call whatever custom handler was passed in
-      this.props.onSelect(name, val)
-      // update local state
-      this.setState({ [name]: newVal })
+    // call whatever custom handler was passed in
+    this.props.onSelect(name, val)
+    // update local state
+    this.setState({ [name]: newVal })
   }
 
   render() {
@@ -39,34 +40,34 @@ class UniqueMultiSelect extends Component {
 
         if ((curVal !== val && hasVal) || (curVal && curVal !== val)) {
           cName += ' is-disabled'
-          handler = () => {}
+          handler = () => { }
         }
 
         return (
-          <li
-            key={i}
+          <div
             className={cName}
             data-name={name}
+            key={i}
             onClick={handler}>
-              {val}
-          </li>
+            {val}
+          </div>
         )
       })
     }
 
     return (
-      <ul className="UniqueMultiSelect">
+      <div className="UniqueMultiSelect">
         {this.props.names.map((name, index) => {
           return (
-            <li key={index} className="UniqueMultiSelect-item">
-              <strong className="UniqueMultiSelect-name">{name}:</strong>
-              <ul className="UniqueMultiSelect-valueList">
+            <div key={index} className="UniqueMultiSelect-item">
+              <div className="UniqueMultiSelect-name">{name}:</div>
+              <div className="UniqueMultiSelect-valueList">
                 {generateValue(name)}
-              </ul>
-            </li>
+              </div>
+            </div>
           )
         })}
-      </ul>
+      </div>
     )
   }
 }
@@ -78,7 +79,7 @@ UniqueMultiSelect.propTypes = {
 }
 
 UniqueMultiSelect.defaultProps = {
-  onSelect: () => {}
+  onSelect: () => { }
 }
 
 export default UniqueMultiSelect
