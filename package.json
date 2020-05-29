@@ -1,7 +1,19 @@
 {
-  "name": "rc-unique-multi-select",
+  "name": "rc-unique-multiselect",
   "homepage": "https://github.com/dogsGhost/rc-unique-multi-select",
   "version": "1.0.0",
+  "main": "src/UniqueMultiselect",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dogsGhost/rc-unique-multi-select.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "unique",
+    "multiselect",
+    "checkbox"
+  ],
   "bugs": {
     "url": "https://github.com/dogsGhost/rc-unique-multi-select/issues"
   },
