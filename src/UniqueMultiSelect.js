@@ -6,7 +6,7 @@ class UniqueMultiselect extends Component {
     super(props)
     // if no values passed create array of numbers the same length as props.names
     // if props.names has 3 values this.values = [1, 2, 3]
-    this.values = this.props.values || Array.from({ length: props.names.length }, (v, k) => k + 1)
+    this.values = props.values || Array.from({ length: props.names.length }, (v, k) => k + 1)
     this.state = {}
     this._handleChange = this._handleChange.bind(this)
 
@@ -25,7 +25,7 @@ class UniqueMultiselect extends Component {
     const newVal = value === this.state[name] ? '' : value
 
     // call whatever custom handler was passed in
-    this.props.onSelect({ name, value })
+    this.props.onSelect({ name, value: newVal })
     // update local state
     this.setState({ [name]: newVal })
   }
