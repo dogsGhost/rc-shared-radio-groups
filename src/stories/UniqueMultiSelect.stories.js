@@ -4,14 +4,14 @@ import UniqueMultiSelect from './../UniqueMultiSelect';
 import './../UniqueMultiSelect.css';
 
 const tasks = ['gym', 'tan', 'laundry']
-const rankings = Array.from({ length: tasks.length }, (v, k) => k + 1)
+const rankings = ['1st', '2nd', '3rd']
 
 const animals = ['cat', 'dog', 'horse', 'goose']
 const actions = ['buy', 'sell', 'trade', 'breed']
 
 export default {
   component: UniqueMultiSelect,
-  title: 'UniqueMultiSelect',
+  title: 'Unique Multi-Select',
 };
 
 export const threeValues = () => {
@@ -22,10 +22,24 @@ export const threeValues = () => {
   />
 };
 
-export const four_values = () => {
+export const fourValues = () => {
   return <UniqueMultiSelect
     names={animals}
     onSelect={action('selected')}
     values={actions}
+  />
+};
+
+export const noValuesPassed = () => {
+  return <UniqueMultiSelect
+    names={animals}
+    onSelect={action('selected')}
+  />
+};
+
+export const noSelectHandlerPassed = () => {
+  return <UniqueMultiSelect
+    names={tasks}
+    values={rankings}
   />
 };
