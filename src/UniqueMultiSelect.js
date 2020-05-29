@@ -8,25 +8,20 @@ class UniqueMultiSelect extends Component {
     // if props.names has 3 values this.values = [1, 2, 3]
     this.values = this.props.values || Array.from({ length: props.names.length }, (v, k) => k + 1)
     this.state = {}
-    this._handleClick = this._handleClick.bind(this)
     this._handleChange = this._handleChange.bind(this)
   }
 
-  _handleClick(e) {
-    const val = e.target.innerHTML
-    const name = e.target.dataset.name
+  _handleChange({ target }) {
+    const value = target.value
+    const name = target.name
     // user selects the value they prev selected, effectively 'unselecting' it
     // or user selects a value for first time
-    const newVal = val === this.state[name] ? '' : val
+    const newVal = value === this.state[name] ? '' : value
 
     // call whatever custom handler was passed in
-    this.props.onSelect(name, val)
+    this.props.onSelect({ name, value })
     // update local state
     this.setState({ [name]: newVal })
-  }
-
-  _handleChange(e) {
-    console.log(e)
   }
 
   generateValue(name) {
@@ -36,8 +31,9 @@ class UniqueMultiSelect extends Component {
     return this.values.map((val, i) => {
       // cast val to string as curVal will be string
       val = typeof val !== 'string' ? `${val}` : val
-      let handler = this._handleClick
+      let handler = this._handleChange
       let hasVal = false
+      let isDisabled = false
       let cName = 'UniqueMultiSelect-value'
       cName += (curVal === val ? ' is-selected' : '')
 
@@ -47,29 +43,24 @@ class UniqueMultiSelect extends Component {
 
       if ((curVal !== val && hasVal) || (curVal && curVal !== val)) {
         cName += ' is-disabled'
+        isDisabled = true
         handler = () => { }
       }
 
       return (
         <div
           className={cName}
-          data-name={name}
-          key={i}
-          onClick={handler}>
-          {val}
+          key={i}>
+          <label className="UniqueMultiSelect-label" htmlFor={name + i}>{val}</label>
+          <input
+            className="UniqueMultiSelect-input"
+            disabled={isDisabled ? "disabled" : ""}
+            id={name + i}
+            name={name}
+            onChange={handler}
+            type="checkbox"
+            value={val} />
         </div>
-        // <div
-        //   className={cName}
-        //   key={i}>
-        //   <label className="UniqueMultiSelect-label" htmlFor={name + i}>{val}</label>
-        //   <input
-        //     className="UniqueMultiSelect-input"
-        //     id={name + i}
-        //     name={name}
-        //     onChange={handler}
-        //     type="radio"
-        //     value={val} />
-        // </div>
       )
     })
   }
