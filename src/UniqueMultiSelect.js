@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import './UniqueMultiSelect.css'
 
 class UniqueMultiSelect extends Component {
   constructor(props) {

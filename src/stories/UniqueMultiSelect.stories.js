@@ -1,6 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import UniqueMultiSelect from './../UniqueMultiSelect';
+import './../UniqueMultiSelect.css';
 
 const tasks = ['gym', 'tan', 'laundry']
 const rankings = Array.from({ length: tasks.length }, (v, k) => k + 1)
