@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import UniqueMultiSelect from './../UniqueMultiSelect';
-import './../UniqueMultiSelect.css';
+import UniqueMultiselect from '../UniqueMultiselect';
+import './../UniqueMultiselect.css';
 
 const tasks = ['gym', 'tan', 'laundry']
 const rankings = ['1st', '2nd', '3rd']
@@ -10,12 +10,12 @@ const animals = ['cat', 'dog', 'horse', 'goose']
 const actions = ['buy', 'sell', 'trade', 'breed']
 
 export default {
-  component: UniqueMultiSelect,
-  title: 'Unique Multi-Select',
+  component: UniqueMultiselect,
+  title: 'Unique Multiselect',
 };
 
 export const threeValues = () => {
-  return <UniqueMultiSelect
+  return <UniqueMultiselect
     names={tasks}
     onSelect={action('selected')}
     values={rankings}
@@ -23,7 +23,7 @@ export const threeValues = () => {
 };
 
 export const fourValues = () => {
-  return <UniqueMultiSelect
+  return <UniqueMultiselect
     names={animals}
     onSelect={action('selected')}
     values={actions}
@@ -31,14 +31,14 @@ export const fourValues = () => {
 };
 
 export const noValuesPassed = () => {
-  return <UniqueMultiSelect
+  return <UniqueMultiselect
     names={animals}
     onSelect={action('selected')}
   />
 };
 
 export const noSelectHandlerPassed = () => {
-  return <UniqueMultiSelect
+  return <UniqueMultiselect
     names={tasks}
     values={rankings}
   />

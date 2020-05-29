@@ -1,10 +1,10 @@
-.UniqueMultiSelect,
-.UniqueMultiSelect-valueList {
+.UniqueMultiselect,
+.UniqueMultiselect-valueList {
   margin: 0 0 1em;
   font-family: sans-serif;
 }
 
-.UniqueMultiSelect-name {
+.UniqueMultiselect-name {
   display: inline-block;
   padding: 0.5em;
   text-align: right;
@@ -12,38 +12,38 @@
   font-weight: 600;
 }
 
-.UniqueMultiSelect-valueList {
+.UniqueMultiselect-valueList {
   display: inline-block;
 }
 
-.UniqueMultiSelect-value {
+.UniqueMultiselect-value {
   display: inline-block;
   margin-right: 1em;
   border: 1px solid #000;
 }
 
 /* checkbox label */
-.UniqueMultiSelect-label {
+.UniqueMultiselect-label {
   display: block;
   padding: 0.5em;
   cursor: pointer;
 }
 
 /* label of selected checkbox */
-.UniqueMultiSelect-value.is-selected .UniqueMultiSelect-label {
+.UniqueMultiselect-value.is-selected .UniqueMultiselect-label {
   background: #333;
   color: #fff;
 }
 
 /* label of disabled checkbox */
-.UniqueMultiSelect-value.is-disabled .UniqueMultiSelect-label {
+.UniqueMultiselect-value.is-disabled .UniqueMultiselect-label {
   font-style: italic;
   color: #ccc;
   cursor: not-allowed;
 }
 
 /* checkbox */
-.UniqueMultiSelect-input {
+.UniqueMultiselect-input {
   position: absolute;
   height: 1px;
   width: 1px;

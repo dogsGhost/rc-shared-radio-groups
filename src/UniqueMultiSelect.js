@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-class UniqueMultiSelect extends Component {
+class UniqueMultiselect extends Component {
   constructor(props) {
     super(props)
     // if no values passed create array of numbers the same length as props.names
@@ -34,7 +34,7 @@ class UniqueMultiSelect extends Component {
       let handler = this._handleChange
       let hasVal = false
       let isDisabled = false
-      let cName = 'UniqueMultiSelect-value'
+      let cName = 'UniqueMultiselect-value'
       cName += (curVal === val ? ' is-selected' : '')
 
       for (let key in this.state) {
@@ -51,9 +51,9 @@ class UniqueMultiSelect extends Component {
         <div
           className={cName}
           key={i}>
-          <label className="UniqueMultiSelect-label" htmlFor={name + i}>{val}</label>
+          <label className="UniqueMultiselect-label" htmlFor={name + i}>{val}</label>
           <input
-            className="UniqueMultiSelect-input"
+            className="UniqueMultiselect-input"
             disabled={isDisabled ? "disabled" : ""}
             id={name + i}
             name={name}
@@ -67,12 +67,12 @@ class UniqueMultiSelect extends Component {
 
   render() {
     return (
-      <div className="UniqueMultiSelect">
+      <div className="UniqueMultiselect">
         {this.props.names.map((name, index) => {
           return (
-            <div key={index} className="UniqueMultiSelect-item">
-              <div className="UniqueMultiSelect-name">{name}:</div>
-              <div className="UniqueMultiSelect-valueList">
+            <div key={index} className="UniqueMultiselect-item">
+              <div className="UniqueMultiselect-name">{name}:</div>
+              <div className="UniqueMultiselect-valueList">
                 {this.generateValue(name)}
               </div>
             </div>
@@ -84,7 +84,7 @@ class UniqueMultiSelect extends Component {
 }
 
 // accepts three props
-UniqueMultiSelect.propTypes = {
+UniqueMultiselect.propTypes = {
   names: PropTypes.array.isRequired,
   // values & names must be the same length
   values: PropTypes.array,
@@ -92,9 +92,9 @@ UniqueMultiSelect.propTypes = {
   onSelect: PropTypes.func,
 }
 
-UniqueMultiSelect.defaultProps = {
+UniqueMultiselect.defaultProps = {
   // default to empty function
   onSelect: () => { }
 }
 
-export default UniqueMultiSelect
+export default UniqueMultiselect
