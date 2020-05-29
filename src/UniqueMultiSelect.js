@@ -8,26 +8,13 @@ class UniqueMultiselect extends Component {
     // if props.names has 3 values this.values = [1, 2, 3]
     this.values = props.values || Array.from({ length: props.names.length }, (v, k) => k + 1)
     this.state = {}
-    this._handleChange = this._handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this)
 
     if (props.values && (props.names.length !== props.values.length)) {
       console.error(
         `UniqueMultiselect Error: The arrays PROPS.NAMES and PROPS.VALUES are not the same length (${props.names.length} vs ${props.values.length})`
       )
     }
-  }
-
-  _handleChange({ target }) {
-    const value = target.value
-    const name = target.name
-    // user selects the value they prev selected, effectively 'unselecting' it
-    // or user selects a value for first time
-    const newVal = value === this.state[name] ? '' : value
-
-    // call whatever custom handler was passed in
-    this.props.onSelect({ name, value: newVal })
-    // update local state
-    this.setState({ [name]: newVal })
   }
 
   generateValue(name) {
@@ -37,7 +24,7 @@ class UniqueMultiselect extends Component {
     return this.values.map((val, i) => {
       // cast val to string as curVal will be string
       val = typeof val !== 'string' ? `${val}` : val
-      let handler = this._handleChange
+      let handler = this.handleChange
       let hasVal = false
       let isDisabled = false
       let cName = 'UniqueMultiselect-value'
@@ -69,6 +56,19 @@ class UniqueMultiselect extends Component {
         </div>
       )
     })
+  }
+
+  handleChange({ target }) {
+    const value = target.value
+    const name = target.name
+    // user selects the value they prev selected, effectively 'unselecting' it
+    // or user selects a value for first time
+    const newVal = value === this.state[name] ? '' : value
+
+    // call whatever custom handler was passed in
+    this.props.onSelect({ name, value: newVal })
+    // update local state
+    this.setState({ [name]: newVal })
   }
 
   render() {
