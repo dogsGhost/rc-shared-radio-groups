@@ -1,8 +1,12 @@
 {
   "name": "rc-unique-multi-select",
-  "homepage": "http://dogsghost.github.io/rc-unique-multi-select",
-  "version": "0.2.0",
-  "private": true,
+  "homepage": "https://github.com/dogsGhost/rc-unique-multi-select",
+  "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/dogsGhost/rc-unique-multi-select/issues"
+  },
+  "author": "David Wilhelm <davwilh@gmail.com>",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.10.1",
