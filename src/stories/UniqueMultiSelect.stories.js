@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import UniqueMultiselect from '../UniqueMultiselect';
-import './../UniqueMultiselect.css';
+import UniqueMultiselect from '../UniqueMultiSelect';
+import './../UniqueMultiSelect.css';
 
 const tasks = ['gym', 'tan', 'laundry']
 const rankings = ['1st', '2nd', '3rd']
