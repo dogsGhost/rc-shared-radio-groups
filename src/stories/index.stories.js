@@ -1,6 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import UniqueMultiselect from '../UniqueMultiSelect';
+// import UniqueMultiselect from '../UniqueMultiSelect';
+import UniqueMultiselect from '../../dist/UniqueMultiSelect';
 import './../UniqueMultiSelect.css';
 
 const tasks = ['gym', 'tan', 'laundry']

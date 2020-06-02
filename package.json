@@ -2,7 +2,7 @@
   "name": "rc-unique-multiselect",
   "homepage": "https://github.com/dogsGhost/rc-unique-multi-select",
   "version": "1.0.0",
-  "main": "src/UniqueMultiselect",
+  "main": "dist/index",
   "repository": {
     "type": "git",
     "url": "https://github.com/dogsGhost/rc-unique-multi-select.git"
@@ -33,10 +33,11 @@
     "babel-loader": "^8.1.0"
   },
   "peerDpendencies": {
-    "react": "^16.13.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "scripts": {
-    "build": "npx babel src/UniqueMultiSelect.js --out-dir dist",
+    "build": "npx babel src/index.js --out-dir dist",
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
