@@ -3,6 +3,7 @@
   "homepage": "https://github.com/dogsGhost/rc-unique-multi-select",
   "version": "1.0.0",
   "main": "dist/index",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/dogsGhost/rc-unique-multi-select.git"
@@ -10,8 +11,10 @@
   "keywords": [
     "react",
     "reactjs",
+    "shared",
     "unique",
     "multiselect",
+    "radio",
     "checkbox"
   ],
   "bugs": {
