@@ -1,7 +1,7 @@
 # React Component: Shared Radio Groups
 
-A normal radio set allows you to select one unique value exclusive to a set.
-This component allows you to select a unique value across multiple sets that share the same set of values. When an option is selected in one set, it is automatically disabled in associated sets.
+A normal radio group allows you to select one unique value exclusive to a group.
+This component allows you to select a unique value across multiple groups that share the same group of values. When an option is selected in one group, it is automatically disabled in associated groups.
 
 [View demo](http://dogsghost.github.io/rc-shared-radio-groups)
 
@@ -41,7 +41,7 @@ Required. Must be an array of strings.
 
 Type: `function`
 
-Optional. If passed must be a function. This is passed the name/value of specific set when it is seleected/deselected.
+Optional. If passed must be a function. This is passed the name/value of a specific group when it is selected/deselected.
 
 ### `values`
 
