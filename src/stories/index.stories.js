@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import UniqueMultiselect from '../index';
+import SharedRadioGroups from '../index';
 import './../index.css';
 
 const tasks = ['gym', 'tan', 'laundry']
@@ -10,12 +10,12 @@ const animals = ['cat', 'dog', 'horse', 'goose']
 const actions = ['buy', 'sell', 'trade', 'breed']
 
 export default {
-  component: UniqueMultiselect,
-  title: 'Unique Multiselect',
+  component: SharedRadioGroups,
+  title: 'Shared Radio Groups',
 };
 
 export const threeValues = () => {
-  return <UniqueMultiselect
+  return <SharedRadioGroups
     names={tasks}
     onSelect={action('selected')}
     values={rankings}
@@ -23,7 +23,7 @@ export const threeValues = () => {
 };
 
 export const fourValues = () => {
-  return <UniqueMultiselect
+  return <SharedRadioGroups
     names={animals}
     onSelect={action('selected')}
     values={actions}
@@ -31,14 +31,14 @@ export const fourValues = () => {
 };
 
 export const noValuesPassed = () => {
-  return <UniqueMultiselect
+  return <SharedRadioGroups
     names={animals}
     onSelect={action('selected')}
   />
 };
 
 export const incorrectNumberOfValuesPassed = () => {
-  return <UniqueMultiselect
+  return <SharedRadioGroups
     names={animals}
     onSelect={action('selected')}
     values={[1]}
@@ -46,7 +46,7 @@ export const incorrectNumberOfValuesPassed = () => {
 };
 
 export const noSelectHandlerPassed = () => {
-  return <UniqueMultiselect
+  return <SharedRadioGroups
     names={tasks}
     values={rankings}
   />

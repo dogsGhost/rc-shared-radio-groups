@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-class UniqueMultiselect extends Component {
+class SharedRadioGroups extends Component {
   constructor(props) {
     super(props)
     // if no values passed create array of numbers the same length as props.names
@@ -12,7 +12,7 @@ class UniqueMultiselect extends Component {
 
     if (props.values && (props.names.length !== props.values.length)) {
       console.error(
-        `UniqueMultiselect Error: The arrays PROPS.NAMES and PROPS.VALUES are not the same length (${props.names.length} vs ${props.values.length})`
+        `SharedRadioGroups Error: The arrays PROPS.NAMES and PROPS.VALUES are not the same length (${props.names.length} vs ${props.values.length})`
       )
     }
   }
@@ -27,7 +27,7 @@ class UniqueMultiselect extends Component {
       let handler = this.handleChange
       let hasVal = false
       let isDisabled = false
-      let cName = 'UniqueMultiselect-value'
+      let cName = 'SharedRadioGroups-value'
       cName += (curVal === val ? ' is-selected' : '')
 
       for (let key in this.state) {
@@ -44,9 +44,9 @@ class UniqueMultiselect extends Component {
         <div
           className={cName}
           key={i}>
-          <label className="UniqueMultiselect-label" htmlFor={name + i}>{val}</label>
+          <label className="SharedRadioGroups-label" htmlFor={name + i}>{val}</label>
           <input
-            className="UniqueMultiselect-input"
+            className="SharedRadioGroups-input"
             disabled={isDisabled ? "disabled" : ""}
             id={name + i}
             name={name}
@@ -73,12 +73,12 @@ class UniqueMultiselect extends Component {
 
   render() {
     return (
-      <div className="UniqueMultiselect">
+      <div className="SharedRadioGroups">
         {this.props.names.map((name, index) => {
           return (
-            <div key={index} className="UniqueMultiselect-item">
-              <div className="UniqueMultiselect-name">{name}:</div>
-              <div className="UniqueMultiselect-valueList">
+            <div key={index} className="SharedRadioGroups-item">
+              <div className="SharedRadioGroups-name">{name}:</div>
+              <div className="SharedRadioGroups-valueList">
                 {this.generateValue(name)}
               </div>
             </div>
@@ -90,7 +90,7 @@ class UniqueMultiselect extends Component {
 }
 
 // accepts three props
-UniqueMultiselect.propTypes = {
+SharedRadioGroups.propTypes = {
   names: PropTypes.arrayOf(PropTypes.string).isRequired,
   // values & names must be the same length
   values: PropTypes.arrayOf(PropTypes.oneOfType([
@@ -101,11 +101,11 @@ UniqueMultiselect.propTypes = {
   onSelect: PropTypes.func,
 }
 
-UniqueMultiselect.defaultProps = {
+SharedRadioGroups.defaultProps = {
   // default to empty function
   onSelect: () => {
-    console.log('UniqueMultiselect: No PROPS.ONSELECT value passed')
+    console.log('SharedRadioGroups: No PROPS.ONSELECT value passed')
   }
 }
 
-export default UniqueMultiselect
+export default SharedRadioGroups

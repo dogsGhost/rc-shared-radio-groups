@@ -1,10 +1,10 @@
-.UniqueMultiselect,
-.UniqueMultiselect-valueList {
+.SharedRadioGroups,
+.SharedRadioGroups-valueList {
   margin: 0 0 1em;
   font-family: sans-serif;
 }
 
-.UniqueMultiselect-name {
+.SharedRadioGroups-name {
   display: inline-block;
   padding: 0.5em;
   text-align: right;
@@ -12,38 +12,38 @@
   font-weight: 600;
 }
 
-.UniqueMultiselect-valueList {
+.SharedRadioGroups-valueList {
   display: inline-block;
 }
 
-.UniqueMultiselect-value {
+.SharedRadioGroups-value {
   display: inline-block;
   margin-right: 1em;
   border: 1px solid #000;
 }
 
 /* checkbox label */
-.UniqueMultiselect-label {
+.SharedRadioGroups-label {
   display: block;
   padding: 0.5em;
   cursor: pointer;
 }
 
 /* label of selected checkbox */
-.UniqueMultiselect-value.is-selected .UniqueMultiselect-label {
+.SharedRadioGroups-value.is-selected .SharedRadioGroups-label {
   background: #333;
   color: #fff;
 }
 
 /* label of disabled checkbox */
-.UniqueMultiselect-value.is-disabled .UniqueMultiselect-label {
+.SharedRadioGroups-value.is-disabled .SharedRadioGroups-label {
   font-style: italic;
   color: #ccc;
   cursor: not-allowed;
 }
 
 /* checkbox */
-.UniqueMultiselect-input {
+.SharedRadioGroups-input {
   position: absolute;
   height: 1px;
   width: 1px;

@@ -1,12 +1,12 @@
 {
-  "name": "rc-unique-multiselect",
-  "homepage": "https://github.com/dogsGhost/rc-unique-multi-select",
+  "name": "rc-shared-radio-groups",
+  "homepage": "https://github.com/dogsGhost/rc-shared-radio-groups",
   "version": "1.0.0",
   "main": "dist/index",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/dogsGhost/rc-unique-multi-select.git"
+    "url": "https://github.com/dogsGhost/rc-shared-radio-groups.git"
   },
   "keywords": [
     "react",
@@ -15,10 +15,11 @@
     "unique",
     "multiselect",
     "radio",
-    "checkbox"
+    "checkbox",
+    "groups"
   ],
   "bugs": {
-    "url": "https://github.com/dogsGhost/rc-unique-multi-select/issues"
+    "url": "https://github.com/dogsGhost/rc-shared-radio-groups/issues"
   },
   "author": "David Wilhelm <davwilh@gmail.com>",
   "license": "MIT",

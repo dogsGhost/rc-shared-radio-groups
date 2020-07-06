@@ -1,29 +1,29 @@
-# React Component: Unique Multiselect
+# React Component: Shared Radio Groups
 
 A normal radio set allows you to select one unique value exclusive to a set.
 This component allows you to select a unique value across multiple sets that share the same set of values. When an option is selected in one set, it is automatically disabled in associated sets.
 
-[View demo](http://dogsghost.github.io/rc-unique-multi-select)
+[View demo](http://dogsghost.github.io/rc-shared-radio-groups)
 
 ## Installing
 
 ```
-$ npm i --save rc-unique-multiselect
+$ npm i --save rc-shared-radio-groups
 ```
 
 ## Usage
 
 ```jsx
-import UniqueMultiselect from 'rc-unique-multiselect';
+import SharedRadioGroups from 'rc-shared-radio-groups';
 
-const uniqueMultiselectHandler = (selection) => {
+const sharedRadioGroupsHandler = (selection) => {
   console.log(selection.name);
   console.log(selection.value);
 }
 
-<UniqueMultiselect
+<SharedRadioGroups
   names={['cat', 'dog']}
-  onSelect={uniqueMultiselectHandler}
+  onSelect={sharedRadioGroupsHandler}
   values={['first', 'second']}>
 ```
 
