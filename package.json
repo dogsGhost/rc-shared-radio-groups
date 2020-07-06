@@ -42,7 +42,7 @@
   },
   "scripts": {
     "build": "npx babel src/index.js --out-dir dist",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
